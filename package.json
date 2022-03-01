@@ -1,0 +1,22 @@
+{
+  "name": "move",
+  "version": "1.0.0",
+  "description": "Chatting app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emre-guler/move.git"
+  },
+  "author": "Emre Guler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emre-guler/move/issues"
+  },
+  "homepage": "https://github.com/emre-guler/move#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
