@@ -7,14 +7,21 @@
     <title>Register Page</title>
 </head>
 <body>
-    <form action="/chatting" method="post">
-        <input type="text" name="name" >
-        <br>
-        <input type="submit">
-    </form>
+    <input type="text" name="name" id="name">
+    <br>
+    <button id="formButton">Submit</button>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js" integrity="sha512-MgkNs0gNdrnOM7k+0L+wgiRc5aLgl74sJQKbIWegVIMvVGPc1+gc1L2oK9Wf/D9pq58eqIJAxOonYPVE5UwUFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        var socket = io();
+        let socket = io();
+        let nameInput = document.getElementById('name');
+        let button = document.getElementById('formButton');
+
+        button.addEventListener('click', () => {
+            if (nameInput.value) {
+                socket.emit('chatRegister', nameInput.value);
+                nameInput.value = '';
+            }
+        })
     </script>
 </body>
 </html>

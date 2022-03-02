@@ -16,9 +16,15 @@ const chatRoute = require('./routes/chatRoute');
 app.use('/chatting', chatRoute);
 io.on('connection', (socket) => {
     console.log('a user connected');
+    
     socket.on('disconnect', () => {
         console.log('user disconnected');
     });
+
+    socket.on('chatRegister', (msg) => {
+        console.log(`New user registered! => ${msg}`);
+    } );
+
 });
 app.use((req, res) => {
     return res.status(404).json({
